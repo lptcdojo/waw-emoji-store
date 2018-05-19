@@ -1,0 +1,30 @@
+{
+  "name": "waw-emoji-store",
+  "version": "1.0.0",
+  "description": "Emoji Store for the LPTC CoderDojo WebApp",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "import": "node store/import_emojis.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Coderdojo-Leixlip/waw-emoji-store.git"
+  },
+  "keywords": [
+    "coderdojo",
+    "emoji",
+    "lptc"
+  ],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Coderdojo-Leixlip/waw-emoji-store/issues"
+  },
+  "homepage": "https://github.com/Coderdojo-Leixlip/waw-emoji-store#readme",
+  "dependencies": {
+    "express": "^4.16.3",
+    "nedb": "^1.8.0",
+    "request": "^2.86.0"
+  }
+}
