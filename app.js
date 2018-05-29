@@ -2,26 +2,29 @@
 
 const express = require('express');
 const bodyParser = require('body-parser');
+const nunjucks = require('nunjucks');
+const path = require('path');
 const config = require('./config');
 const db = require('./store/db');
 
 const app = express();
 
-const errorHandler = (err, req, res, next) => {
-  console.error(`Error occurred while handling the request: ${err}`);
-  res.status(500).send('Error!');
-}
+// Template engine.
+nunjucks.configure('templates', {
+  autoescape: true,
+  express: app
+});
 
 // Middlewares.
+app.use(express.static(path.join(__dirname, 'static')));
 app.use(bodyParser.json());
-app.use(errorHandler);
 
 // API routes.
 app.use('/api/emojis/', require('./api'));
 
 // Homepage.
 app.get('/', (req, res) => {
-  res.send('Hello Emoji world!');
+  res.render('index.html');
 });
 
 db.loadDatabase();
