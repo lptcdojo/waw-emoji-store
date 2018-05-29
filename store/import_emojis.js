@@ -39,7 +39,7 @@ const getEmojis = (data) => {
 
   lines.forEach((line) => {
     if (!isCommentOrBlank(line)) {
-      emoji = parseEmojiDataLine(line);
+      let emoji = parseEmojiDataLine(line);
       if (emoji) {
         emoji['_id'] = id++;
         emojis.push(emoji);
