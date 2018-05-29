@@ -19,7 +19,6 @@ router.route('/').get(async (req, res) => {
   if (name) {
     name = name.trim();
     criteria.name = new RegExp(`${name}`, 'i');
-    console.log(criteria.name);
   }
   if (tags) {
     let ts = [];
@@ -29,7 +28,6 @@ router.route('/').get(async (req, res) => {
     });
     criteria.tags = {$in: ts};
   }
-  console.log(criteria);
 
   db.find(criteria)
     .limit(limit)
