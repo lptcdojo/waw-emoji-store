@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="stylesheet" href="/css/bootstrap.min.css">
   <link rel="stylesheet" href="/css/style.css">
   <script type="text/javascript" src="/js/client.js"></script>
   <script type="text/javascript">
@@ -14,12 +17,16 @@
     <div id="header">
       <div id="title">🏪 Emoji Store</div>
       <form id="search-emoji-form">
-        <input type="text" id="search-query" />
-        <button type="submit" id="search">🔍</button>
+        <div class="input-group mb-3">
+          <input type="text" class="form-control" id="search-query" autocomplete="off" />
+          <div class="input-group-append">
+            <button class="btn btn-outline-secondary" type="submit" id="search">🔍</button>
+          </div>
+        </div>
       </form>
     </div>
-    <div id="content">
-      <div id="emojis-results"></div>
+    <div id="content" class="card">
+      <div id="emojis-results" class="shadow-sm"></div>
     </div>
   </div>
 </body>

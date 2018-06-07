@@ -17,27 +17,31 @@ const showEmojis = (emojis) => {
     resultsDiv.removeChild(resultsDiv.firstChild);
   }
 
+  let emojiInfoList = document.createElement('ul');
+  emojiInfoList.className = 'list-group list-group-flush';
+
   if (emojis.length === 0) {
-    let emojiInfoDiv = document.createElement('div');
-    emojiInfoDiv.className = 'emoji-info';
-    emojiInfoDiv.textContent = 'No results found.';
-    resultsDiv.appendChild(emojiInfoDiv);
+    let emojiInfoListItem = document.createElement('li');
+    emojiInfoListItem.className = 'emoji-info list-group-item';
+    emojiInfoListItem.textContent = 'No results found.';
+    emojiInfoList.appendChild(emojiInfoListItem);
   } else {
     emojis.forEach((emoji) => {
-      let emojiInfoDiv = document.createElement('div');
-      emojiInfoDiv.className = 'emoji-info';
+      let emojiInfoListItem = document.createElement('li');
+      emojiInfoListItem.className = 'emoji-info list-group-item';
 
       let emojiCharCol = document.createElement('span');
       emojiCharCol.textContent = emoji['char'];
-      emojiInfoDiv.appendChild(emojiCharCol);
+      emojiInfoListItem.appendChild(emojiCharCol);
 
       let emojiDescCol = document.createElement('span');
       emojiDescCol.textContent = formatDesc(emoji['name']);
-      emojiInfoDiv.appendChild(emojiDescCol);
+      emojiInfoListItem.appendChild(emojiDescCol);
 
-      resultsDiv.appendChild(emojiInfoDiv);
+      emojiInfoList.appendChild(emojiInfoListItem);
     });
   }
+  resultsDiv.appendChild(emojiInfoList);
 }
 
 const searchEmojis = (query) => {
