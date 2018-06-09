@@ -1,6 +1,8 @@
 'use strict';
 
+const PORT = process.env.PORT || 8000
+
 module.exports = {
-  port: 8080,
+  port: PORT,
   dbFile: './store/emojis.db'
 }
