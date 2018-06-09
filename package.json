@@ -5,7 +5,8 @@
   "main": "app.js",
   "scripts": {
     "start": "node app.js",
-    "import": "node store/import_emojis.js"
+    "import": "node store/import_emojis.js",
+    "heroku-postbuild": "npm run-script import"
   },
   "repository": {
     "type": "git",
