@@ -16,4 +16,4 @@ Make sure you have imported the emojis data before starting the app:
 
 Run the app:
 
-    npm run start
+    npx nodemon -e .js,.html app.js
